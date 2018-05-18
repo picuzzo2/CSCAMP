@@ -27,7 +27,7 @@ var9 = StringVar()
 
 root.option_add("*Font", "candara 16")
 
-load = Image.open("i2.png")
+load = Image.open("BG.png")
 rende = ImageTk.PhotoImage(load)
 img = Label(root, image=rende)
 img.image = rende   
@@ -85,7 +85,7 @@ def on_click():
     alcohol = var9.get()
 
     if is_float(fixed_acidity) != True or is_float(volatile_acidity) != True  or is_float(citric_acid) != True or is_float(residual_sugar) != True or is_float(chlorides) != True or is_float(free_sulfur_dioxide) != True or is_float(total_sulfur_dioxide) != True or is_float(sulphates) != True or is_float( alcohol) != True :
-        messagebox.showerror("Error", "ตัวเลขเท่านั้น")
+        messagebox.showerror("Error", "Float or Integer only")
     else :
         data = [float(fixed_acidity),float(volatile_acidity),float(citric_acid),float(residual_sugar),float(chlorides),float(free_sulfur_dioxide),float(total_sulfur_dioxide),float(sulphates),float(alcohol)]
         with open('collectedData.csv','w',newline='') as f:
@@ -99,7 +99,7 @@ def on_click():
         
 def question():
     text="""Fixed_acidity : 1.00 - 20.00 \nVolatile_acidity : 0.00 - 2.00\nCitric acid : 0 - 1 \nResidual sugar : 0 - 20 \nChlorides : 0.000 - 1.000\nfree sulfur dioxide : 0.00 - 100.00\nFree sulfur dioxide 3 - 300\nalcohol:0 - 20"""
-    messagebox.showinfo("data",text)
+    messagebox.showinfo("Detail",text)
 
 ###################################################################################
 
